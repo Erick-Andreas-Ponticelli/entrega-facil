@@ -1,0 +1,9 @@
+package br.com.entregafacil.repository;
+
+import br.com.entregafacil.model.Comentario;
+import java.util.List;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ComentarioRepository extends JpaRepository<Comentario, Long> {
+    List<Comentario> findByTrabalho_IdOrderByCriadoEmAsc(Long trabalhoId);
+}
